@@ -16,9 +16,7 @@ class Network
     main_charcater = []
     @shows.each do |show|
       show.characters.each do |character|
-        if character.salary > 500_000 && character.name == character.name.upcase
-          main_charcater << character
-        end
+        main_charcater << character if character.salary > 500_000 && character.name == character.name.upcase
       end
     end
     main_charcater
@@ -53,13 +51,12 @@ class Network
   end
 
   def prolific_actors
-    hash = {
-      'David Hasselhoff' => [knight_rider, baywatch],
-      'William Daniels' => [knight_rider],
-      'Amy Poehler' => [parks_and_rec],
-      'Nick Offerman' => [parks_and_rec]
-    }
-
-    p hash.key.max
+    actor = []
+    shows_by_actor.each do |key, value|
+      if value.length > 1
+        actor << key
+      end
+    end
+    actor
   end
 end
