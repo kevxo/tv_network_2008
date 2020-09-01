@@ -37,4 +37,29 @@ class Network
     end
     hash
   end
+
+  def shows_by_actor
+    hash = {}
+    @shows.each do |show|
+      show.characters.each do |character|
+        if hash[character.actor]
+          hash[character.actor] << show
+        else
+          hash[character.actor] = [show]
+        end
+      end
+    end
+    hash
+  end
+
+  def prolific_actors
+    hash = {
+      "David Hasselhoff" => [knight_rider, baywatch],
+      "William Daniels" => [knight_rider],
+      "Amy Poehler" => [parks_and_rec],
+      "Nick Offerman" => [parks_and_rec]
+    }
+
+    p hash.key.max
+  end
 end
