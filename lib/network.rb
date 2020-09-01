@@ -54,10 +54,10 @@ class Network
 
   def prolific_actors
     hash = {
-      "David Hasselhoff" => [knight_rider, baywatch],
-      "William Daniels" => [knight_rider],
-      "Amy Poehler" => [parks_and_rec],
-      "Nick Offerman" => [parks_and_rec]
+      'David Hasselhoff' => [knight_rider, baywatch],
+      'William Daniels' => [knight_rider],
+      'Amy Poehler' => [parks_and_rec],
+      'Nick Offerman' => [parks_and_rec]
     }
 
     p hash.key.max
